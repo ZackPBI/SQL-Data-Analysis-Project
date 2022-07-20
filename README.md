@@ -6,6 +6,7 @@ In this project, i went through SQL Server Integration Services (SSIS) to import
 The dataset is from  [SBA Open Data ](https://data.sba.gov/dataset/ppp-foia)
 
 #### SSIS Foreach Loop Container In order to load multiple source files
+![](foreach loop.png)
 
 
 # Part 1 : Cleaning Data with SQL
