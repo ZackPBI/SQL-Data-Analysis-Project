@@ -2,13 +2,13 @@
 
 In this project, i went through SQL Server Integration Services (SSIS) to import data from CSV files into SQL Server Database, then i went through cleaning data and making it ready to be used for analytics. And then last, I explored the imported data with SQL for insights.
 
-The dataset is from SBA Open Data: https://data.sba.gov/dataset/ppp-foia
+
+The dataset is from  [SBA Open Data ](https://data.sba.gov/dataset/ppp-foia)
+
+#### SSIS Foreach Loop Container In order to load multiple source files
 
 
-### SSIS Foreach Loop Container In order to load multiple source files
-
-
-## Part 1 : Cleaning Data with SQL
+# Part 1 : Cleaning Data with SQL
 
 ```
 
@@ -48,9 +48,9 @@ where LookupCodes = 31
 ```
 
 
-## Part 2 : Exploring Datausing SQL
+# Part 2 : Exploring Datausing SQL
 
-### Summary of All PPP Approved Lending
+#### Summary of All PPP Approved Lending
 
 ```
 Select count(LoanNumber) as Loans_Approved
@@ -61,7 +61,7 @@ from [dbo].[sba_public_data]
 order by 3 desc
 ```
 
-### Summary of 2021 PPP Approved Lending
+#### Summary of 2021 PPP Approved Lending
 
 ```
 Select count(LoanNumber) as Loans_Approved
@@ -73,7 +73,7 @@ where year(DateApproved) = 2021
 order by 3 desc
 ```
 
-### Summary of 2020 PPP Approved Lending
+#### Summary of 2020 PPP Approved Lending
 
 ```
 Select count(LoanNumber) as Loans_Approved
@@ -86,7 +86,7 @@ order by 3 desc
 ```
 
 
-### Summary of 2021 PPP Approved Loans per Originating Lender, loan count, total amount and average
+#### Summary of 2021 PPP Approved Loans per Originating Lender, loan count, total amount and average
 
 --Data is ordered by Net_Dollars
 
@@ -100,7 +100,7 @@ where year(DateApproved) = 2021
 group by OriginatingLender
 order by 3 desc
 ```
-### Top 15 Originating Lenders for 2021 PPP Loans
+#### Top 15 Originating Lenders for 2021 PPP Loans
 ```
 Select top 15 OriginatingLender
        , count(LoanNumber) as Loans_Approved
@@ -113,7 +113,7 @@ order by 3 desc
 ```
 
 
-### Top 20 Industries that received the PPP Loans in 2021
+#### Top 20 Industries that received the PPP Loans in 2021
 
 
 ```
@@ -141,7 +141,7 @@ order by 3 desc
 ```
 
 
-### States and Territories
+#### States and Territories
 
 ```
 select BorrowerState as state
@@ -154,7 +154,7 @@ order by 1
 ```
 
 
-### Demographics for PPP
+#### Demographics for PPP
 
 ```
 select race
@@ -188,7 +188,7 @@ group by Veteran
 order by 3
 ```
 
-### How much of the PPP Loans of 2021 have been fully forgiven
+#### How much of the PPP Loans of 2021 have been fully forgiven
 
 ```
 select count(LoanNumber) as Count_of_Payments
@@ -197,7 +197,7 @@ from sba_public_data
 where year(DateApproved) = 2020 and ForgivenessAmount <> 0
 ```
 
-### Summary of 2021 PPP Approved Lending
+#### Summary of 2021 PPP Approved Lending
 
 ```
 Select count(LoanNumber) as Loans_Approved
@@ -209,7 +209,7 @@ where year(DateApproved) = 2020
 order by 3 desc
 ```
 
-### In which month was the highest amount given out by the SBA to borrowers
+#### In which month was the highest amount given out by the SBA to borrowers
 
 ```
 select Year(DateApproved) Year_Approved
