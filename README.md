@@ -1,6 +1,9 @@
-# SQL Data Analysis Project
+
 
 🔗 **[Back to Portfolio](https://your-portfolio-site.com)**
+
+
+# SQL Data Analysis Project
 
 In this project, i went through SQL Server Integration Services (SSIS) to import data from CSV files into SQL Server Database, then i went through cleaning data and making it ready to be used for analytics. And then last, I explored the imported data with SQL for insights.
 
